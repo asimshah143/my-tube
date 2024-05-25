@@ -2,18 +2,16 @@ import { configDotenv } from "dotenv";
 import connectDB from "../db/index.js";
 
 configDotenv({
-    path:'./.env'
-})
+  path: "./.env",
+});
 
 // dotenv.config({
 //     path: './.env'
 // })
 console.log("utils index in running");
-connectDB()
+connectDB();
 
-
-
-//second approch is in db file 
+//second approch is in db file
 // FIRT APPROCH
 // import express from "express";
 // const app = express()
