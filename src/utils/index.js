@@ -5,10 +5,6 @@ configDotenv({
   path: "./.env",
 });
 
-// dotenv.config({
-//     path: './.env'
-// })
-console.log("utils index in running");
 connectDB();
 
 //second approch is in db file
