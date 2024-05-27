@@ -1,11 +1,23 @@
 import { configDotenv } from "dotenv";
-import connectDB from "../db/index.js";
+import connectDB from "./db/index.js";
+import express from "express";
+
+const app = express();
 
 configDotenv({
   path: "./.env",
 });
 
-connectDB();
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 8000),
+      () => {
+        console.log(`server is running on PORT ${process.env.PORT}`);
+      };
+  })
+  .catch((err) => {
+    console.log("mongoDB connection is failed", err);
+  });
 
 //second approch is in db file
 // FIRT APPROCH
